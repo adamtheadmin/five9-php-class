@@ -1,11 +1,26 @@
+# PHP five9 REPORTS Class
 
-/*//===
-	Five9 PHP API Class for reporting
-	By Adam Fowler, lilglower@hotmail.com
-	11-07-2014
-*///===
+### Five9 PHP API Class for reporting
+
+### By Adam Fowler, lilglower@hotmail.com
+
+### 11-07-2014
+
 
 This is a class for handling reports and other API Methods through a clean PHP Class. 
 If you have any good contributions to make to this code please do so.
+Example Code:
 
-I hate soap.
+    <?php
+    include(dirname(__FILE__) . "/five9.class.php");
+    $five9 = new five9([
+    	"username" => "***",
+    	"password" => "***"
+    ]);
+    //example reporting
+    $report = $five9->runReport("FolderName", "ReportName", [
+    	'time' => [
+    		'start' => date('c', strtotime($date . " 12:00 AM")),
+    		'end' => date('c', strtotime($date . " 11:59 PM"))
+    	]
+    ]);
